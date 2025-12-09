@@ -49,8 +49,36 @@ Once installed, mention MCP-related keywords in your Kiro chat:
 "Create a FastMCP tool for searching contacts"
 "How do I design tools for AI agents?"
 ```
-
 Kiro will automatically activate the MCP Maker power and load relevant context.
+
+
+Here's a full example prompt that triggers this Kiro power:
+
+```text
+Build an MCP server that does the following:
+
+1. Use the financialdatasets.ai API endpoint: <https://api.financialdatasets.ai/prices/snapshot/?ticker={ticker}>
+2. Set appropriate headers including User-Agent: "Mozilla/0.1" and Accept: "application/json"
+3. Parse the response to extract key metrics like price, volume, day_change, and day_change_percent
+
+When displaying responses:
+
+- Format financial data in a professional, easy-to-read manner
+- Highlight important metrics like current price, volume, and daily changes
+- Provide context for price movements (positive/negative changes)
+- Handle errors appropriately and suggest alternative tickers if needed
+- Convert raw data into meaningful financial insights
+
+We'll be using the free endpoint (no API KEY) only a few tickers are accessible.
+Available free tickers: AAPL, BRK.B, GOOGL, MSFT, NVDA, TSLA.
+
+Use your best judgement.
+```
+
+Copy this prompt and paste it Kiro IDE and experience a fully working MCP server built for you in no time. 🎉
+
+You should have plenty of available context left even after the requested server fully built.
+
 
 ## Key Features
 
