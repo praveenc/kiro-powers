@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "mcp-server-builder": {
+      "command": "uvx",
+      "args": ["mcp-server-builder@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
+    }
+  }
+}
