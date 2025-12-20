@@ -1,105 +1,65 @@
-# MCP Maker - Kiro Power
+# Kiro Powers Collection
 
-Build production-ready MCP servers in Python with FastMCP framework, live docs, and agent-optimized tool design patterns.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Kiro](https://img.shields.io/badge/Kiro-Powers-blue)](https://kiro.dev)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://python.org)
+[![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react&logoColor=black)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?logo=typescript&logoColor=white)](https://typescriptlang.org)
 
-## Overview
+A curated collection of Kiro Powers for building MCP servers, React applications, and Raycast extensions.
 
-**MCP Maker** is a Kiro Power that helps you build Model Context Protocol (MCP) servers using Python and the FastMCP framework. It provides:
+## Available Powers
 
-- **Live documentation lookup** - Search and fetch docs from modelcontextprotocol.io and gofastmcp.com
-- **Curated quickstart patterns** - Minimal server templates and best practices
-- **Agent-optimized tool design** - Learn how to build tools that AI agents can use effectively
-
-## What's Included
-
-### MCP Servers
-- **mcp-server-builder** - Live documentation search and retrieval for MCP protocol and FastMCP framework
-
-### Steering Files
-- **getting-started.md** - Complete quickstart guide with minimal server template, three primitives, and configuration examples
-- **tool-design.md** - Best practices for designing effective tools that agents can use efficiently (naming, responses, token efficiency)
+| Power | Description | Keywords |
+|-------|-------------|----------|
+| [MCP Maker](#mcp-maker) | Build MCP servers with FastMCP | `mcp`, `fastmcp`, `python`, `tools` |
+| [Cloudscape Design](#cloudscape-design-system) | React apps with AWS Cloudscape | `cloudscape`, `react`, `aws-ui`, `components` |
+| [Raycast Extensions](#raycast-extensions) | Build Raycast extensions | `raycast`, `extension`, `macos`, `typescript` |
 
 ## Installation
 
-### In Kiro IDE
+### From GitHub
 
 1. Open Kiro → Powers panel
 2. Click **Add power from GitHub**
-3. Enter: `https://github.com/praveenc/mcp-maker`
-4. Click Install
+3. Enter: `https://github.com/praveenc/kiro-powers`
+4. Select the power(s) to install
 
-### Manual Installation
+### From Local Path
 
 ```bash
-git clone https://github.com/praveenc/mcp-maker.git
-cd mcp-maker
+git clone https://github.com/praveenc/kiro-powers.git
 ```
 
 Then in Kiro:
+
 1. Open Powers panel
 2. Click **Add power from Local Path**
-3. Select the `mcp-maker` directory
+3. Select the desired power directory
 
-## Quick Start
+---
 
-Once installed, mention MCP-related keywords in your Kiro chat:
+## MCP Maker
 
-```
-"Help me build an MCP server"
-"Create a FastMCP tool for searching contacts"
-"How do I design tools for AI agents?"
-```
-Kiro will automatically activate the MCP Maker power and load relevant context.
+![MCP](https://img.shields.io/badge/MCP-Protocol-green)
+![FastMCP](https://img.shields.io/badge/FastMCP-Framework-orange)
 
+Build production-ready MCP servers in Python with FastMCP framework, live docs, and agent-optimized tool design patterns.
 
-Here's a full example prompt that triggers this Kiro power:
+### Features
 
-```text
-Build an MCP server that does the following:
+- Live documentation lookup from modelcontextprotocol.io and gofastmcp.com
+- Curated quickstart patterns and minimal server templates
+- Agent-optimized tool design best practices
 
-1. Use the financialdatasets.ai API endpoint: <https://api.financialdatasets.ai/prices/snapshot/?ticker={ticker}>
-2. Set appropriate headers including User-Agent: "Mozilla/0.1" and Accept: "application/json"
-3. Parse the response to extract key metrics like price, volume, day_change, and day_change_percent
+### Steering Files
 
-When displaying responses:
+| File | Purpose |
+|------|---------|
+| `getting-started.md` | Quickstart guide, server templates, configuration |
+| `tool-design.md` | Tool naming, responses, token efficiency |
 
-- Format financial data in a professional, easy-to-read manner
-- Highlight important metrics like current price, volume, and daily changes
-- Provide context for price movements (positive/negative changes)
-- Handle errors appropriately and suggest alternative tickers if needed
-- Convert raw data into meaningful financial insights
-
-We'll be using the free endpoint (no API KEY) only a few tickers are accessible.
-Available free tickers: AAPL, BRK.B, GOOGL, MSFT, NVDA, TSLA.
-
-Use your best judgement.
-```
-
-Copy this prompt and paste it Kiro IDE and experience a fully working MCP server built for you in no time. 🎉
-
-You should have plenty of available context left even after the requested server fully built.
-
-
-## Key Features
-
-### Three MCP Primitives
-
-| Primitive | Control | Use Case |
-|-----------|---------|----------|
-| **Tools** | Model-controlled | API calls, actions, side effects |
-| **Resources** | Application-controlled | Configs, files, database schemas |
-| **Prompts** | User-controlled | Slash commands, guided workflows |
-
-### Best Practices Included
-
-- Use `uv` for Python project management
-- Type hints for automatic JSON Schema generation
-- Async/await for I/O-bound operations
-- Proper logging (stderr, not stdout)
-- Token-efficient tool design
-- Agent-friendly naming conventions
-
-## Example: Building Your First Server
+### Quick Example
 
 ```python
 from mcp.server.fastmcp import FastMCP
@@ -108,43 +68,175 @@ mcp = FastMCP("my-server")
 
 @mcp.tool()
 def search_contacts(query: str, limit: int = 10) -> list[dict]:
-    """Search contacts by name, email, or company.
-    
-    Args:
-        query: Search term
-        limit: Maximum results (default: 10)
-    """
-    # Your implementation here
+    """Search contacts by name, email, or company."""
     return results
 
 if __name__ == "__main__":
     mcp.run(transport='stdio')
 ```
 
-## Documentation
-
-- [MCP Protocol Docs](https://modelcontextprotocol.io)
-- [FastMCP Framework](https://gofastmcp.com)
-- [Kiro Powers Guide](https://kiro.dev/docs/powers/)
-
-## Requirements
+### Requirements
 
 - Python 3.10+
 - `uv` package manager
-- Kiro IDE
+
+---
+
+## Cloudscape Design System
+
+![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react&logoColor=black)
+![AWS](https://img.shields.io/badge/AWS-Cloudscape-FF9900?logo=amazon-aws&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-Supported-3178C6?logo=typescript&logoColor=white)
+
+Build professional, accessible React applications using the AWS Cloudscape Design System - the same system powering the AWS Management Console.
+
+### Features
+
+- 90+ production-ready React components with built-in accessibility (WCAG 2.1 AA)
+- Token-based theming with light/dark mode and content density settings
+- Comprehensive patterns for layouts, forms, tables, charts, and GenAI interfaces
+- Full TypeScript support with typed components and event handlers
+
+### Steering Files
+
+| File | Purpose |
+|------|---------|
+| `foundations.md` | Design tokens, spacing, colors, typography |
+| `layout-patterns.md` | AppLayout, containers, grids |
+| `form-patterns.md` | Forms, inputs, validation |
+| `table-and-collections.md` | Tables, cards, filtering, pagination |
+| `navigation-patterns.md` | Sidebar, tabs, breadcrumbs |
+| `feedback-patterns.md` | Alerts, modals, status indicators |
+| `charts-and-data-viz.md` | Line, bar, pie charts |
+| `genai-patterns.md` | Chat bubbles, prompts, AI interfaces |
+
+### Quick Example
+
+```tsx
+import '@cloudscape-design/global-styles/index.css';
+import { Button, Container, Header } from '@cloudscape-design/components';
+
+function App() {
+  return (
+    <Container header={<Header variant="h1">My App</Header>}>
+      <Button variant="primary">Get Started</Button>
+    </Container>
+  );
+}
+```
+
+### Full Example Prompt
+
+Here's a complete prompt that triggers this Kiro power and builds a functional dashboard:
+
+```text
+Build a React dashboard application using Cloudscape Design System with the following features:
+
+1. **App Layout**: Use AppLayout with a collapsible side navigation containing:
+   - Dashboard (home)
+   - Users (list view)
+   - Settings
+
+2. **Dashboard Page**: Create a dashboard with:
+   - Header showing "Analytics Dashboard" with a refresh button
+   - 4 metric cards in a ColumnLayout showing: Total Users, Active Sessions, Revenue, Growth %
+   - A LineChart showing user activity over the last 7 days
+   - A Table showing recent transactions with columns: ID, User, Amount, Status, Date
+
+3. **Table Features**: The transactions table should include:
+   - PropertyFilter for searching by user or status
+   - Pagination (10 items per page)
+   - Selection checkboxes with bulk actions (Export, Delete)
+   - StatusIndicator for transaction status (success=green, pending=yellow, failed=red)
+
+4. **Requirements**:
+   - Use TypeScript throughout
+   - Support dark mode toggle in the top navigation
+   - All components must be accessible (proper ariaLabels)
+   - Use design tokens for any custom styling
+
+Use your best judgment for sample data and styling.
+```
+
+Copy this prompt and paste it into Kiro IDE to experience a fully working Cloudscape dashboard built for you. The power will automatically load relevant steering files for layouts, tables, charts, and navigation. 🎉
+
+### Requirements
+
+- Node.js 18+
+- `@cloudscape-design/components`
+- `@cloudscape-design/global-styles`
+
+---
+
+## Raycast Extensions
+
+![Raycast](https://img.shields.io/badge/Raycast-Extension-FF6363)
+![macOS](https://img.shields.io/badge/macOS-Only-000000?logo=apple&logoColor=white)
+
+Build, test, and publish Raycast extensions with React, TypeScript, and the Raycast API.
+
+### Features
+
+- Full Raycast API support (List, Form, Detail, Grid)
+- AI extension patterns with tools and evals
+- Store publishing workflow
+
+### Steering Files
+
+| File | Purpose |
+|------|---------|
+| `getting-started.md` | Project setup, first extension |
+| `commands-and-ui.md` | List, Form, Detail, Grid components |
+| `actions-and-navigation.md` | ActionPanel, shortcuts, navigation |
+| `ai-extensions.md` | AI tools, evals, prompts |
+| `manifest-config.md` | package.json, preferences, arguments |
+| `data-and-storage.md` | LocalStorage, API calls, caching |
+| `publishing.md` | Store submission, review process |
+
+### Quick Example
+
+```tsx
+import { List, ActionPanel, Action } from "@raycast/api";
+
+export default function Command() {
+  return (
+    <List>
+      <List.Item
+        title="Hello World"
+        actions={
+          <ActionPanel>
+            <Action.CopyToClipboard content="Hello!" />
+          </ActionPanel>
+        }
+      />
+    </List>
+  );
+}
+```
+
+### Requirements
+
+- Node.js 16+
+- Raycast (macOS)
+
+---
+
+## Documentation
+
+- [Kiro Powers Guide](https://kiro.dev/docs/powers/)
+- [MCP Protocol](https://modelcontextprotocol.io)
+- [FastMCP Framework](https://gofastmcp.com)
+- [Cloudscape Design](https://cloudscape.design)
+- [Raycast API](https://developers.raycast.com)
 
 ## Contributing
 
-This power is maintained independently. For issues or suggestions, please open a GitHub issue.
+For issues or suggestions, please open a GitHub issue.
 
 ## License
 
-MIT License - See LICENSE file for details
+MIT License - See [LICENSE](LICENSE) for details.
 
 ## Author
 
 Praveen Chamarthi
-
----
-
-**Keywords:** mcp, model-context-protocol, server, tools, resources, prompts, stdio, http, streamable, fastmcp
