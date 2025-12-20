@@ -2,8 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Kiro](https://img.shields.io/badge/Kiro-Powers-blue)](https://kiro.dev)
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://python.org)
-[![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react&logoColor=black)](https://react.dev)
+[![Python 3.13](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)](https://python.org)
+[![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react&logoColor=black)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?logo=typescript&logoColor=white)](https://typescriptlang.org)
 
 A curated collection of Kiro Powers for building MCP servers, React applications, and Raycast extensions.
@@ -43,6 +43,7 @@ Then in Kiro:
 
 ![MCP](https://img.shields.io/badge/MCP-Protocol-green)
 ![FastMCP](https://img.shields.io/badge/FastMCP-Framework-orange)
+![Python 3.13](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
 
 Build production-ready MCP servers in Python with FastMCP framework, live docs, and agent-optimized tool design patterns.
 
@@ -84,7 +85,7 @@ if __name__ == "__main__":
 
 ## Cloudscape Design System
 
-![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react&logoColor=black)
+![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react&logoColor=black)
 ![AWS](https://img.shields.io/badge/AWS-Cloudscape-FF9900?logo=amazon-aws&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-Supported-3178C6?logo=typescript&logoColor=white)
 
@@ -192,27 +193,6 @@ Build, test, and publish Raycast extensions with React, TypeScript, and the Rayc
 | `manifest-config.md` | package.json, preferences, arguments |
 | `data-and-storage.md` | LocalStorage, API calls, caching |
 | `publishing.md` | Store submission, review process |
-
-### Quick Example
-
-```tsx
-import { List, ActionPanel, Action } from "@raycast/api";
-
-export default function Command() {
-  return (
-    <List>
-      <List.Item
-        title="Hello World"
-        actions={
-          <ActionPanel>
-            <Action.CopyToClipboard content="Hello!" />
-          </ActionPanel>
-        }
-      />
-    </List>
-  );
-}
-```
 
 ### Requirements
 
