@@ -47,7 +47,7 @@ Then in Kiro:
 
 ### Overview
 
-MCP Maker is a Kiro Power that helps you build Model Context Protocol (MCP) servers using Python and the FastMCP framework.
+MCP Maker Kiro Power helps you build Model Context Protocol (MCP) servers using Python and the FastMCP framework.
 
 #### Features
 
@@ -80,7 +80,7 @@ Once installed, mention MCP-related keywords in your Kiro chat:
 
 Kiro will automatically activate the MCP Maker power and load relevant context.
 
-Here's a full example prompt that triggers this Kiro power:
+### Example Prompt
 
 ````markdown
 Build an MCP server that does the following:
@@ -170,45 +170,15 @@ Build a React dashboard application using Cloudscape Design System with the foll
 Use your best judgment for sample data and styling.
 ````
 
-Copy this prompt and paste it into Kiro IDE to experience a fully working Cloudscape dashboard built for you. The power will automatically load relevant steering files for layouts, tables, charts, and navigation. 🎉
+Copy this prompt and paste it into Kiro IDE to experience a fully working Cloudscape dashboard built for you.
+
+The power will automatically load relevant steering files for layouts, tables, charts, and navigation. 🎉
 
 ### Requirements
 
 - Node.js 18+
 - `@cloudscape-design/components`
 - `@cloudscape-design/global-styles`
-
----
-
-## Raycast Extensions
-
-![Raycast](https://img.shields.io/badge/Raycast-Extension-FF6363)
-![macOS](https://img.shields.io/badge/macOS-Only-000000?logo=apple&logoColor=white)
-
-Build, test, and publish Raycast extensions with React, TypeScript, and the Raycast API.
-
-### Features
-
-- Full Raycast API support (List, Form, Detail, Grid)
-- AI extension patterns with tools and evals
-- Store publishing workflow
-
-### Steering Files
-
-| File | Purpose |
-|------|---------|
-| `getting-started.md` | Project setup, first extension |
-| `commands-and-ui.md` | List, Form, Detail, Grid components |
-| `actions-and-navigation.md` | ActionPanel, shortcuts, navigation |
-| `ai-extensions.md` | AI tools, evals, prompts |
-| `manifest-config.md` | package.json, preferences, arguments |
-| `data-and-storage.md` | LocalStorage, API calls, caching |
-| `publishing.md` | Store submission, review process |
-
-### Requirements
-
-- Node.js 16+
-- Raycast (macOS)
 
 ---
 
