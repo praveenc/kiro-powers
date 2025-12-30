@@ -22,7 +22,8 @@ A curated collection of Kiro Powers for building MCP servers, React applications
 
 1. Open Kiro → Powers panel
 2. Click **Add power from GitHub**
-3. Enter power URL: for e.g. `mcp-maker` power enter `https://github.com/praveenc/kiro-powers/tree/main/mcp-maker`
+3. Enter power URL: for e.g. `mcp-maker` power \
+   enter `https://github.com/praveenc/kiro-powers/tree/main/mcp-maker`
 4. Select the power(s) to install
 
 ### From Local Path
@@ -85,7 +86,7 @@ Kiro will automatically activate the MCP Maker power and load relevant context.
 
 Copy the below prompt and paste it into Kiro IDE chat window and see a fully working MCP server built for you (one-shotted) in no time. 🎉
 
-```markdown
+````markdown
 Build a new `stock-price-watch` mcp-server using stdio transport with the following tools.
 
 - `list_available_tickers` - List all available Free stock tickers to query on financialdatasets.ai API endpoint.
@@ -110,7 +111,7 @@ We'll be using the free endpoint (no API KEY) only a few tickers are accessible.
 Note: Available tickers on free endpoint are: Available free tickers: AAPL, BRK.B, GOOGL, MSFT, NVDA, TSLA.
 
 Use your best judgement.
-```
+````
 
 You should have plenty of context left for additional tweaks and updates - even after the requested server fully built.
 
@@ -125,7 +126,7 @@ Build a new `weather-watch` mcp server in python using stdio transport with the 
 
 When a User asks: "What's the forecast for San Francisco?" LLM makes the following tool calls.
 
-```bash
+```text
 1. get_lat_long("San Francisco") → 37.7749, -122.4194
 2. get_forecast(37.7749, -122.4194) → Detailed forecast
 ```
@@ -177,7 +178,7 @@ Here's a complete prompt that triggers this Kiro power and builds a functional d
 
 Copy this prompt and paste it into Kiro IDE to experience a fully working Cloudscape dashboard built for you. 🎉
 
-```markdown
+````markdown
 Build a React dashboard application using Cloudscape Design System with the following features:
 
 1. **App Layout**: Use AppLayout with a collapsible side navigation containing:
@@ -204,7 +205,7 @@ Build a React dashboard application using Cloudscape Design System with the foll
     - Use design tokens for any custom styling
 
 Use your best judgment for sample data and styling.
-```
+````
 
 The power will automatically load relevant steering files for layouts, tables, charts, and navigation. 🎉
 
