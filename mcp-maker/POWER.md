@@ -3,7 +3,20 @@ name: "mcp-maker"
 displayName: "Build MCP servers with FastMCP"
 description: "Build production-ready MCP servers in Python with FastMCP framework, live docs, and agent-optimized tool design patterns"
 author: "Praveen Chamarthi"
-keywords: ["mcp", "model-context-protocol", "server", "tools", "resources", "prompts", "stdio", "http", "streamable", "fastmcp"]
+keywords:
+    [
+        "mcp",
+        "mcp-server",
+        "mcp server",
+        "mcp tools",
+        "mcp resources",
+        "mcp prompts",
+        "mcp transport",
+        "stdio",
+        "http",
+        "streamable",
+        "fastmcp",
+    ]
 ---
 
 # MCP Server Maker Power
@@ -38,14 +51,14 @@ This power provides:
 Provides live documentation lookup for both MCP protocol (modelcontextprotocol.io) and FastMCP framework (gofastmcp.com).
 
 1. **search_mcp_docs** - Search documentation with ranked results
-   - Required: `query` (string) - Search query (e.g., "tool input schema", "lifespan management")
-   - Optional: `k` (integer) - Max results (default: 5)
-   - Optional: `source` ("mcp" | "fastmcp") - Filter by documentation source
-   - Returns: List of documents with URL, title, score, and snippet
+    - Required: `query` (string) - Search query (e.g., "tool input schema", "lifespan management")
+    - Optional: `k` (integer) - Max results (default: 5)
+    - Optional: `source` ("mcp" | "fastmcp") - Filter by documentation source
+    - Returns: List of documents with URL, title, score, and snippet
 
 2. **fetch_mcp_doc** - Fetch full document content by URL
-   - Required: `uri` (string) - Document URL from search results
-   - Returns: Full document with URL, title, and complete content
+    - Required: `uri` (string) - Document URL from search results
+    - Returns: Full document with URL, title, and complete content
 
 ## Tool Usage Examples
 
@@ -53,9 +66,9 @@ Provides live documentation lookup for both MCP protocol (modelcontextprotocol.i
 
 ```javascript
 usePower("mcp-maker", "mcp-docs", "search_mcp_docs", {
-  "query": "FastMCP tool decorator async",
-  "k": 3
-})
+	query: "FastMCP tool decorator async",
+	k: 3,
+});
 // Returns: Top 3 relevant docs about async tools
 ```
 
@@ -63,18 +76,18 @@ usePower("mcp-maker", "mcp-docs", "search_mcp_docs", {
 
 ```javascript
 usePower("mcp-maker", "mcp-docs", "fetch_mcp_doc", {
-  "uri": "https://gofastmcp.com/servers/tools"
-})
+	uri: "https://gofastmcp.com/servers/tools",
+});
 // Returns: Complete tools documentation page
 ```
 
 ## Three Primitives
 
-| Primitive | Control | Description | Use Case |
-|-----------|---------|-------------|----------|
-| **Tools** | Model-controlled | Functions LLM can call | API calls, actions, side effects |
-| **Resources** | Application-controlled | Read-only data access | Configs, files, database schemas |
-| **Prompts** | User-controlled | Reusable templates | Slash commands, guided workflows |
+| Primitive     | Control                | Description            | Use Case                         |
+| ------------- | ---------------------- | ---------------------- | -------------------------------- |
+| **Tools**     | Model-controlled       | Functions LLM can call | API calls, actions, side effects |
+| **Resources** | Application-controlled | Read-only data access  | Configs, files, database schemas |
+| **Prompts**   | User-controlled        | Reusable templates     | Slash commands, guided workflows |
 
 ## Best Practices
 
@@ -91,15 +104,15 @@ usePower("mcp-maker", "mcp-docs", "fetch_mcp_doc", {
 
 For detailed patterns, read `tool-design.md` steering file.
 
-| Do | Don't |
-|----|-------|
-| Build consolidated workflow tools | Wrap every API endpoint separately |
-| `search_contacts(query)` | `list_contacts()` (brute-force) |
-| Return `name`, `title`, `status` | Return `uuid`, `mime_type` |
-| Use `user_id` parameter name | Use ambiguous `user` parameter |
-| Namespace: `github_create_issue` | Generic: `create_issue` |
-| Add `format` param for response control | Always return full details |
-| Provide actionable error messages | Return opaque error codes |
+| Do                                      | Don't                              |
+| --------------------------------------- | ---------------------------------- |
+| Build consolidated workflow tools       | Wrap every API endpoint separately |
+| `search_contacts(query)`                | `list_contacts()` (brute-force)    |
+| Return `name`, `title`, `status`        | Return `uuid`, `mime_type`         |
+| Use `user_id` parameter name            | Use ambiguous `user` parameter     |
+| Namespace: `github_create_issue`        | Generic: `create_issue`            |
+| Add `format` param for response control | Always return full details         |
+| Provide actionable error messages       | Return opaque error codes          |
 
 ### Tool Descriptions
 

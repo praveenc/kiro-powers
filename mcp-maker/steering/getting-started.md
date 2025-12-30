@@ -19,9 +19,15 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```bash
 uv init my-mcp-server
 cd my-mcp-server
+```
+
+**2a. Add dependencies and activate venv**
+
+```bash
 uv add "mcp[cli]"
 uv add httpx  # For HTTP clients (optional)
-# craete and activate venv
+
+# create and activate venv
 uv venv && source .venv/bin/activate
 ```
 
@@ -58,6 +64,9 @@ if __name__ == "__main__":
 **4. Test immediately:**
 
 ```bash
+# activate venv
+source .venv/bin/activate
+
 # Development with MCP Inspector
 uv run mcp dev server.py
 
@@ -67,11 +76,11 @@ uv run python server.py
 
 ## Three Primitives
 
-| Primitive | Control | Decorator | Use Case |
-|-----------|---------|-----------|----------|
-| **Tools** | Model | `@mcp.tool()` | Actions, API calls, side effects |
-| **Resources** | Application | `@mcp.resource("uri://...")` | Read-only data, configs |
-| **Prompts** | User | `@mcp.prompt()` | Templates, slash commands |
+| Primitive     | Control     | Decorator                    | Use Case                         |
+| ------------- | ----------- | ---------------------------- | -------------------------------- |
+| **Tools**     | Model       | `@mcp.tool()`                | Actions, API calls, side effects |
+| **Resources** | Application | `@mcp.resource("uri://...")` | Read-only data, configs          |
+| **Prompts**   | User        | `@mcp.prompt()`              | Templates, slash commands        |
 
 ## Async Tools (for I/O)
 
@@ -113,12 +122,17 @@ uv run python server.py
 
 ```json
 {
-  "mcpServers": {
-    "my-server": {
-      "command": "uv",
-      "args": ["--directory", "/absolute/path/to/project", "run", "server.py"]
-    }
-  }
+	"mcpServers": {
+		"my-server": {
+			"command": "uv",
+			"args": [
+				"--directory",
+				"/absolute/path/to/project",
+				"run",
+				"server.py"
+			]
+		}
+	}
 }
 ```
 
@@ -126,15 +140,15 @@ With environment variables:
 
 ```json
 {
-  "mcpServers": {
-    "my-server": {
-      "command": "uv",
-      "args": ["--directory", "/path/to/project", "run", "server.py"],
-      "env": {
-        "API_KEY": "your-api-key"
-      }
-    }
-  }
+	"mcpServers": {
+		"my-server": {
+			"command": "uv",
+			"args": ["--directory", "/path/to/project", "run", "server.py"],
+			"env": {
+				"API_KEY": "your-api-key"
+			}
+		}
+	}
 }
 ```
 
@@ -142,14 +156,14 @@ With environment variables:
 
 1. **Never print to stdout** - Corrupts JSON-RPC messages in stdio transport
 
-   ```python
-   # ❌ Bad
-   print("Processing")
+    ```python
+    # ❌ Bad
+    print("Processing")
 
-   # ✅ Good
-   import logging
-   logging.info("Processing")
-   ```
+    # ✅ Good
+    import logging
+    logging.info("Processing")
+    ```
 
 2. **Type hints required** - FastMCP uses them for JSON Schema generation
 

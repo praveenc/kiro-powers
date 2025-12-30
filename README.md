@@ -10,11 +10,11 @@ A curated collection of Kiro Powers for building MCP servers, React applications
 
 ## Available Powers
 
-| Power | Description | Keywords |
-|-------|-------------|----------|
-| [MCP Maker](#mcp-maker) | Build MCP servers with FastMCP | `mcp`, `fastmcp`, `python`, `tools` |
+| Power                                          | Description                    | Keywords                                      |
+| ---------------------------------------------- | ------------------------------ | --------------------------------------------- |
+| [MCP Maker](#mcp-maker)                        | Build MCP servers with FastMCP | `mcp`, `fastmcp`, `python`, `tools`           |
 | [Cloudscape Design](#cloudscape-design-system) | React apps with AWS Cloudscape | `cloudscape`, `react`, `aws-ui`, `components` |
-| [Raycast Extensions](#raycast-extensions) | Build Raycast extensions | `raycast`, `extension`, `macos`, `typescript` |
+| [Raycast Extensions](#raycast-extensions)      | Build Raycast extensions       | `raycast`, `extension`, `macos`, `typescript` |
 
 ## Installation
 
@@ -63,27 +63,35 @@ MCP Maker Kiro Power helps you build Model Context Protocol (MCP) servers using 
 
 #### Steering Files
 
-| File | Purpose |
-|------|---------|
+| File                 | Purpose                                           |
+| -------------------- | ------------------------------------------------- |
 | `getting-started.md` | Quickstart guide, server templates, configuration |
-| `tool-design.md` | Tool naming, responses, token efficiency |
+| `tool-design.md`     | Tool naming, responses, token efficiency          |
 
 ### Activating this Kiro Power
 
 Once installed, mention MCP-related keywords in your Kiro chat:
 
-````markdown
-"Help me build an MCP server"
-"Create a FastMCP tool for searching contacts"
+```markdown
+"Help me build a mcp-server in python using stdio transport"
+"Create a mcp server with a tool for searching contacts"
 "How do I design tools for AI agents?"
-````
+```
 
 Kiro will automatically activate the MCP Maker power and load relevant context.
 
 ### Example Prompt
 
-````markdown
-Build an MCP server that does the following:
+Copy the below prompt and paste it into Kiro IDE chat window and see a fully working MCP server built for you (one-shotted) in no time. 🎉
+
+```markdown
+Build a new `stock-price-watch` mcp-server using stdio transport with the following tools.
+
+- `list_available_tickers` - List all available Free stock tickers to query on financialdatasets.ai API endpoint.
+- `compare_stocks` - Compare multiple stocks side by side.
+- `get_stock_snapshot` - Get current stock price snapshot with key metrics.
+
+Follow these instructions:
 
 1. Use the financialdatasets.ai API endpoint: <https://api.financialdatasets.ai/prices/snapshot/?ticker={ticker}>
 2. Set appropriate headers including User-Agent: "Mozilla/0.1" and Accept: "application/json"
@@ -97,15 +105,40 @@ When displaying responses:
 - Handle errors appropriately and suggest alternative tickers if needed
 - Convert raw data into meaningful financial insights
 
-We'll be using the free endpoint (no API KEY) only a few tickers are accessible.
-Available free tickers: AAPL, BRK.B, GOOGL, MSFT, NVDA, TSLA.
+We'll be using the free endpoint (no API KEY) only a few tickers are accessible.\
+Note: Available tickers on free endpoint are: Available free tickers: AAPL, BRK.B, GOOGL, MSFT, NVDA, TSLA.
 
 Use your best judgement.
-````
-
-Copy the prompt and paste it into Kiro IDE and see a fully working MCP server built for you (one-shotted) in no time. 🎉
+```
 
 You should have plenty of context left for additional tweaks and updates - even after the requested server fully built.
+
+Here's another prompt to try
+
+````markdown
+Build a new `weather-watch` mcp server in python using stdio transport with the following tools.
+
+- `get_alerts` - Get's weather alerts for a give state.
+- `get_lat_long` - Converts US city names to latitude/longitude coordinates.
+- `get_forecast` - Get weather forecase for a give latitude, longitude coordinates.
+
+When a User asks: "What's the forecast for San Francisco?"
+
+```bash
+1. get_lat_long("San Francisco") → 37.7749, -122.4194
+2. get_forecast(37.7749, -122.4194) → Detailed forecast
+```
+
+Use these following free API endpoints to query weather data
+
+- GEOCODE_API_BASE = "https://geocode.xyz"
+- NWS_API_BASE = "https://api.weather.gov"
+
+Follow these instructions:
+
+1. Ask clarifying questions relevant for building this mcp server.
+2. Always get forecast for next 7 days and format the results neatly.
+````
 
 ---
 
@@ -126,49 +159,49 @@ Build professional, accessible React applications using the AWS Cloudscape Desig
 
 ### Steering Files
 
-| File | Purpose |
-|------|---------|
-| `foundations.md` | Design tokens, spacing, colors, typography |
-| `layout-patterns.md` | AppLayout, containers, grids |
-| `form-patterns.md` | Forms, inputs, validation |
-| `table-and-collections.md` | Tables, cards, filtering, pagination |
-| `navigation-patterns.md` | Sidebar, tabs, breadcrumbs |
-| `feedback-patterns.md` | Alerts, modals, status indicators |
-| `charts-and-data-viz.md` | Line, bar, pie charts |
-| `genai-patterns.md` | Chat bubbles, prompts, AI interfaces |
+| File                       | Purpose                                    |
+| -------------------------- | ------------------------------------------ |
+| `foundations.md`           | Design tokens, spacing, colors, typography |
+| `layout-patterns.md`       | AppLayout, containers, grids               |
+| `form-patterns.md`         | Forms, inputs, validation                  |
+| `table-and-collections.md` | Tables, cards, filtering, pagination       |
+| `navigation-patterns.md`   | Sidebar, tabs, breadcrumbs                 |
+| `feedback-patterns.md`     | Alerts, modals, status indicators          |
+| `charts-and-data-viz.md`   | Line, bar, pie charts                      |
+| `genai-patterns.md`        | Chat bubbles, prompts, AI interfaces       |
 
 ### Full Example Prompt
 
 Here's a complete prompt that triggers this Kiro power and builds a functional dashboard:
 
-````markdown
+```markdown
 Build a React dashboard application using Cloudscape Design System with the following features:
 
 1. **App Layout**: Use AppLayout with a collapsible side navigation containing:
-   - Dashboard (home)
-   - Users (list view)
-   - Settings
+    - Dashboard (home)
+    - Users (list view)
+    - Settings
 
 2. **Dashboard Page**: Create a dashboard with:
-   - Header showing "Analytics Dashboard" with a refresh button
-   - 4 metric cards in a ColumnLayout showing: Total Users, Active Sessions, Revenue, Growth %
-   - A LineChart showing user activity over the last 7 days
-   - A Table showing recent transactions with columns: ID, User, Amount, Status, Date
+    - Header showing "Analytics Dashboard" with a refresh button
+    - 4 metric cards in a ColumnLayout showing: Total Users, Active Sessions, Revenue, Growth %
+    - A LineChart showing user activity over the last 7 days
+    - A Table showing recent transactions with columns: ID, User, Amount, Status, Date
 
 3. **Table Features**: The transactions table should include:
-   - PropertyFilter for searching by user or status
-   - Pagination (10 items per page)
-   - Selection checkboxes with bulk actions (Export, Delete)
-   - StatusIndicator for transaction status (success=green, pending=yellow, failed=red)
+    - PropertyFilter for searching by user or status
+    - Pagination (10 items per page)
+    - Selection checkboxes with bulk actions (Export, Delete)
+    - StatusIndicator for transaction status (success=green, pending=yellow, failed=red)
 
 4. **Requirements**:
-   - Use TypeScript throughout
-   - Support dark mode toggle in the top navigation
-   - All components must be accessible (proper ariaLabels)
-   - Use design tokens for any custom styling
+    - Use TypeScript throughout
+    - Support dark mode toggle in the top navigation
+    - All components must be accessible (proper ariaLabels)
+    - Use design tokens for any custom styling
 
 Use your best judgment for sample data and styling.
-````
+```
 
 Copy this prompt and paste it into Kiro IDE to experience a fully working Cloudscape dashboard built for you.
 
