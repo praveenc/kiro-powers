@@ -22,12 +22,13 @@ A curated collection of Kiro Powers for building MCP servers, React applications
 
 1. Open Kiro → Powers panel
 2. Click **Add power from GitHub**
-3. Enter: `https://github.com/praveenc/kiro-powers`
+3. Enter power URL: for e.g. `mcp-maker` power enter `https://github.com/praveenc/kiro-powers/tree/main/mcp-maker`
 4. Select the power(s) to install
 
 ### From Local Path
 
 ```bash
+# clone entire repo to disk
 git clone https://github.com/praveenc/kiro-powers.git
 ```
 
@@ -35,7 +36,7 @@ Then in Kiro:
 
 1. Open Powers panel
 2. Click **Add power from Local Path**
-3. Select the desired power directory
+3. Select the desired power directory from the clone repo
 
 ---
 
@@ -174,6 +175,8 @@ Build professional, accessible React applications using the AWS Cloudscape Desig
 
 Here's a complete prompt that triggers this Kiro power and builds a functional dashboard:
 
+Copy this prompt and paste it into Kiro IDE to experience a fully working Cloudscape dashboard built for you. 🎉
+
 ```markdown
 Build a React dashboard application using Cloudscape Design System with the following features:
 
@@ -202,8 +205,6 @@ Build a React dashboard application using Cloudscape Design System with the foll
 
 Use your best judgment for sample data and styling.
 ```
-
-Copy this prompt and paste it into Kiro IDE to experience a fully working Cloudscape dashboard built for you.
 
 The power will automatically load relevant steering files for layouts, tables, charts, and navigation. 🎉
 
