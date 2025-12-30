@@ -10,11 +10,11 @@ A curated collection of Kiro Powers for building MCP servers, React applications
 
 ## Available Powers
 
-| Power                                          | Description                    | Keywords                                      |
-| ---------------------------------------------- | ------------------------------ | --------------------------------------------- |
-| [MCP Maker](#mcp-maker)                        | Build MCP servers with FastMCP | `mcp`, `fastmcp`, `python`, `tools`           |
-| [Cloudscape Design](#cloudscape-design-system) | React apps with AWS Cloudscape | `cloudscape`, `react`, `aws-ui`, `components` |
-| [Raycast Extensions](#raycast-extensions)      | Build Raycast extensions       | `raycast`, `extension`, `macos`, `typescript` |
+| Power                                          | Description                    | Keywords                                       |
+| ---------------------------------------------- | ------------------------------ | ---------------------------------------------- |
+| [MCP Maker](#mcp-maker)                        | Build MCP servers with FastMCP | `mcp server`, `mcp-server`, `fastmcp`, `stdio` |
+| [Cloudscape Design](#cloudscape-design-system) | React apps with AWS Cloudscape | `cloudscape`, `react`, `aws-ui`, `components`  |
+| [Raycast Extensions](#raycast-extensions)      | Build Raycast extensions       | `raycast`, `extension`, `macos`, `typescript`  |
 
 ## Installation
 
