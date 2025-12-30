@@ -113,7 +113,7 @@ Use your best judgement.
 
 You should have plenty of context left for additional tweaks and updates - even after the requested server fully built.
 
-Here's another prompt to try
+Here's another. Build **weather-watch** mcp server.
 
 ````markdown
 Build a new `weather-watch` mcp server in python using stdio transport with the following tools.
@@ -122,7 +122,7 @@ Build a new `weather-watch` mcp server in python using stdio transport with the 
 - `get_lat_long` - Converts US city names to latitude/longitude coordinates.
 - `get_forecast` - Get weather forecase for a give latitude, longitude coordinates.
 
-When a User asks: "What's the forecast for San Francisco?"
+When a User asks: "What's the forecast for San Francisco?" LLM makes the following tool calls.
 
 ```bash
 1. get_lat_long("San Francisco") → 37.7749, -122.4194
